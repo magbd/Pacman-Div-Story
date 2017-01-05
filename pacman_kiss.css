@@ -1,0 +1,293 @@
+body {
+  background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.perso {
+  display: flex;
+}
+#title {
+  text-align: center;
+  color: white;
+}
+h1 {
+
+  margin: 20px 0 0 0;
+  font-family: 'Glegoo', serif;
+  font-weight: normal;
+}
+/*===================================*/
+/*BOUTON PLAY*/
+/*===================================*/
+#play {
+
+}
+#button {
+width: 80px;
+height: 80px;
+cursor: pointer;
+}
+/*.masque {
+  visibility: hidden;
+}
+.affiche {
+  visibility: visible;
+}*/
+/*===================================*/
+/*LOVE*/
+/*===================================*/
+#love {
+  position: relative;
+  margin-top: 120px;
+}
+/*++++++++++++++++*/
+@keyframes love {
+  0% {
+    opacity: 1;
+     bottom: 0px;
+   }
+  100% {opacity: 0; bottom: 100px;}
+}
+.action_love {
+  animation: love 3s linear infinite;
+  animation-delay: 6s;
+}
+/*++++++++++++++++*/
+.love {
+  width: 100px;
+  height: 90px;
+  }
+  .love:before,
+  .love:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: red;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  }
+  .love:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin :100% 100%;
+  }
+
+/*===================================*/
+/*PACMAN*/
+/*===================================*/
+
+#pacman {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  background: #dbb200;
+}
+#mouth {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 40px;
+  right: 0px;
+  border-top: 50px solid transparent;
+  border-right: 70px solid #1c1c1c;
+  border-bottom: 70px solid transparent;
+}
+/*++++++++++++++++*/
+.action_pacman {
+  animation-name: mouth;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+}
+
+@keyframes mouth {
+  from {
+    border-top: 50px solid transparent;
+    border-right: 0px solid #1c1c1c;
+    border-bottom: 0px solid transparent;
+  }
+  to {
+    border-top: 50px solid transparent;
+    border-right: 70px solid #1c1c1c;
+    border-bottom: 70px solid transparent;
+  }
+}
+/*++++++++++++++++*/
+#pacman .eyes {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: black;
+
+  right: 60px;
+  top: 30px;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+
+#pacman .eyes .iris {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+
+  top: 5px;
+  right: 2px;
+
+}
+/*===================================*/
+/*GHOST*/
+/*===================================*/
+
+#ghost {
+  position: relative;
+  height: 180px;
+  width: 130px;
+  background: #f679f1;
+
+  -webkit-border-radius: 70px 70px 0 0;
+  -moz-border-radius: 70px 70px 0 0;
+  -o-border-radius: 70px 70px 0 0;
+  border-radius: 70px 70px 0 0;
+}
+/*++++++++++++++++*/
+.action {
+  animation-name: ghost_move;
+  animation-duration: 5s;
+}
+@keyframes ghost_move {
+  from {left: 800px;}
+  to {left: 0px;}
+}
+/*++++++++++++++++*/
+#ghost .eyes {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+#ghost .eyes:nth-child(1) {
+  top: 40px;
+  left: 20px;
+}
+#ghost .eyes:nth-child(2) {
+  top: 40px;
+  left: 70px;
+}
+#ghost .eyes .iris {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: blue;
+  top: 10px;
+
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+/*++++++++++++++++*/
+  animation-name: yeux;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes yeux {
+  0%  {left:0px;}
+  25% {left: 10px;}
+  50% {left: 20px;}
+  75% {left: 10px;}
+  100% {left: 0px;}
+}
+/*++++++++++++++++*/
+#joue_left {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  background: #ff4e42;
+  background: radial-gradient(#ff4e42, #f679f1);
+  border-radius: 100%;
+  top: 90px;
+  left: 10px;
+}
+
+#joue_right {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  background: #ff4e42;
+  background: radial-gradient(#ff4e42, #f679f1);
+  border-radius: 100%;
+  top: 90px;
+  right: 10px;
+}
+/*++++++++++++++++*/
+.action_joue_left, .action_joue_right{
+  animation-name: blush;
+  animation-duration: 6s;
+}
+@keyframes blush {
+  0%  {display: none; opacity: 0;}
+  95% {display: block; opacity: 0.1}
+  100% {opacity: 1;}
+}
+/*++++++++++++++++*/
+.bottom .left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  left: 0;
+
+  border-left: 33px solid transparent;
+  border-right: 33px solid transparent;
+  border-bottom: 40px solid #1c1c1c;
+}
+
+.bottom .right {
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+
+  border-left: 33px solid transparent;
+  border-right: 33px solid transparent;
+  border-bottom: 40px solid #1c1c1c;
+}
